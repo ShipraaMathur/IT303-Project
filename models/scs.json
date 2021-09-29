@@ -1,0 +1,121 @@
+{
+	"models": [
+        {
+		"name": "scs",
+        "generator": "random(edge_coverage(100) && vertex_coverage(100))",
+        "startElementId": "n1::n2",
+		"vertices": [{
+			"id": "n0::n0",
+			"name": "Airplane",
+			
+			"properties": {
+				"x": 516.5453600000001,
+				"y": -505.1170075683583,
+                "flightNumber": 0,
+                "runwayNumber" : 0
+			}
+		}, 
+        {
+			"id": "n1::n1",
+			"name": "Pilot",
+			"properties": {
+				"x": -219.90927999999985,
+				"y": -188.53200000000027,
+                "assignedFlightNumber":0,
+                "pilotID":0
+			}
+		}, {
+			"id": "n1::n2",
+			"name": "ATC",
+			"properties": {
+				"x": -123.07963999999993,
+				"y": -422.53200000000027,
+                "id" : 0
+			}
+		}, {
+			"id": "n2::n1",
+			"name": "Runway",
+			"properties": {
+				"x": -866.6592799999999,
+				"y": -608.5409100341793,
+                "status":"free",
+                "trackNumber" : 0
+			}
+		}]
+        ,
+		"edges": [
+		{
+			"id": "e0",
+			"name": "getPilot",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n2",
+			"targetVertexId": "n0::n0"
+		},  
+		{
+			"id": "e1",
+			"name": "runwayAssignment",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n2",
+			"targetVertexId": "n2::n1"
+		}, {
+			"id": "e2",
+			"name": "getLocation",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n2",
+			"targetVertexId": "n0::n0"
+		}, {
+			"id": "e3",
+			"name": "predictConflict",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n2",
+			"targetVertexId": "n0::n0"
+		},  {
+			"id": "n1::e4",
+			"name": "resolveConflict",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n2",
+			"targetVertexId": "n1::n1"
+		},  {
+			"id": "e4",
+			"name": "assignRunway",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n2",
+			"targetVertexId": "n0::n0"
+		}, {
+			"id": "e5",
+			"name": "makeConflictAmend",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n1",
+			"targetVertexId": "n0::n0"
+		}, {
+			"id": "e6",
+			"name": "returnATCfromAir",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n0::n0",
+			"targetVertexId": "n1::n2"
+		}, {
+			"id": "e7",
+			"name": "returnATCfromRunway",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n2::n1",
+			"targetVertexId": "n1::n2"
+		}, {
+			"id": "e8",
+			"name": "returnATCfromPilot",
+			"weight": 0.0,
+			"dependency": 0,
+			"sourceVertexId": "n1::n1",
+			"targetVertexId": "n1::n2"
+		}
+	]
+	}]
+}
