@@ -5,7 +5,7 @@
 		"startElementId": "n",
 		"actions": [
 			"airplane_number = 0;",
-			"airplane_1_location = '2:3;3:4;6:4'",
+			"airplane_1_location = '2:3'",
 			"runway_number = 0;",
 			"pilot_number = 0;",
 			"state = -1;",
