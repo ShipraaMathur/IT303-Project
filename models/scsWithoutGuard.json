@@ -5,11 +5,12 @@
 		"startElementId": "n",
 		"actions": [
 			"airplane_number = 0;",
-			"airplane_1_location = 203",
+			"airplane_1_location = '2:3;3:4;6:4'",
 			"runway_number = 0;",
 			"pilot_number = 0;",
 			"state = -1;",
-			"runway_status = 'Free';"
+			"runway_status = 'Free';",
+			"airplane_visited = 0"
 		],
 		"vertices": [{
 				"id": "n",
@@ -64,7 +65,6 @@
 			{
 				"id": "e0",
 				"name": "getPilot",
-				"guard": "state == 0",
 
 				"weight": 0,
 				"dependency": 0,
@@ -73,7 +73,6 @@
 			}, {
 				"id": "e1",
 				"name": "runwayAssignment",
-				"guard": "state == 1",
 				"weight": 0,
 				"dependency": 0,
 
@@ -82,7 +81,6 @@
 			}, {
 				"id": "e2",
 				"name": "getLocation",
-				"guard": "state == 3",
 				"weight": 0,
 				"dependency": 0,
 				"sourceVertexId": "n1::n2",
@@ -90,7 +88,6 @@
 			}, {
 				"id": "e3",
 				"name": "predictConflict",
-				"guard": "state == 4",
 
 				"weight": 0,
 				"dependency": 0,
@@ -99,7 +96,6 @@
 			}, {
 				"id": "n1::e4",
 				"name": "resolveConflict",
-				"guard": "state == 5",
 				"weight": 0,
 				"dependency": 0,
 				"sourceVertexId": "n1::n2",
@@ -107,7 +103,6 @@
 			}, {
 				"id": "e4",
 				"name": "assignRunway",
-				"guard": "state == 2",
 				"weight": 0,
 				"dependency": 0,
 				"sourceVertexId": "n1::n2",

@@ -1,0 +1,356 @@
+11:44:02.853 [main] DEBUG org.graphwalker.io.factory.json.JsonContextFactory - {	"models": [{		"name": "scs",		"generator": "random(edge_coverage(100) && vertex_coverage(100))",		"startElementId": "n",		"actions": [			"airplane_number = 0;",			"airplane_1_location = '2:3'",			"runway_number = 0;",			"pilot_number = 0;",			"state = -1;",			"runway_status = 'Free';",			"airplane_visited = 0"		],		"vertices": [{				"id": "n",				"name": "Start"			},			{				"id": "n0::n0",				"name": "Airplane",				"properties": {					"x": 516.5453600000001,					"y": -505.1170075683583,					"flightNumber": 0,					"runwayNumber": 0				}			}, {				"id": "n1::n1",				"name": "Pilot",				"properties": {					"x": -219.90927999999985,					"y": -188.53200000000027,					"assignedFlightNumber": 0,					"pilotID": 0				}			}, {				"id": "n1::n2",				"name": "ATC",				"properties": {					"x": -123.07963999999993,					"y": -422.53200000000027,					"id": 0				}			}, {				"id": "n2::n1",				"name": "Runway",				"properties": {					"x": -866.6592799999999,					"y": -608.5409100341793,					"status": "free",					"trackNumber": 0				}			}		],		"edges": [{				"id": "e",				"name": "start_operation",				"sourceVertexId": "n",				"targetVertexId": "n1::n2"			},			{				"id": "e0",				"name": "getPilot",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n2",				"targetVertexId": "n0::n0"			}, {				"id": "e1",				"name": "runwayAssignment",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n2",				"targetVertexId": "n2::n1"			}, {				"id": "e2",				"name": "getLocation",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n2",				"targetVertexId": "n0::n0"			}, {				"id": "e3",				"name": "predictConflict",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n2",				"targetVertexId": "n0::n0"			}, {				"id": "n1::e4",				"name": "resolveConflict",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n2",				"targetVertexId": "n1::n1"			}, {				"id": "e4",				"name": "assignRunway",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n2",				"targetVertexId": "n0::n0"			}, {				"id": "e5",				"name": "makeConflictAmend",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n1::n1",				"targetVertexId": "n0::n0"			}, {				"id": "e6",				"name": "returnATCfromAir",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n0::n0",				"targetVertexId": "n1::n2"			}, {				"id": "e7",				"name": "returnATCfromRunway",				"weight": 0,				"dependency": 0,				"sourceVertexId": "n2::n1",				"targetVertexId": "n1::n2"			}		]	}]}
+11:44:05.542 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'airplane_number = 0;' in model: 'scs'
+11:44:05.983 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, '
+11:44:05.984 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'airplane_1_location = '2:3'' in model: 'scs'
+11:44:06.132 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, airplane_1_location: 2:3, '
+11:44:06.133 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_number = 0;' in model: 'scs'
+11:44:06.139 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, airplane_1_location: 2:3, runway_number: 0, '
+11:44:06.139 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'pilot_number = 0;' in model: 'scs'
+11:44:06.144 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, airplane_1_location: 2:3, runway_number: 0, pilot_number: 0, '
+11:44:06.144 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state = -1;' in model: 'scs'
+11:44:06.152 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, airplane_1_location: 2:3, runway_number: 0, pilot_number: 0, state: -1, '
+11:44:06.152 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_status = 'Free';' in model: 'scs'
+11:44:06.158 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, airplane_1_location: 2:3, runway_number: 0, pilot_number: 0, state: -1, runway_status: Free, '
+11:44:06.158 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'airplane_visited = 0' in model: 'scs'
+11:44:06.162 [main] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 0, airplane_1_location: 2:3, runway_number: 0, pilot_number: 0, state: -1, runway_status: Free, airplane_visited: 0, '
+Oct 29, 2021 11:44:06 AM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19.4 05/24/2017 03:20 PM'
+Oct 29, 2021 11:44:08 AM org.glassfish.grizzly.http.server.NetworkListener start
+INFO: Started listener bound to [0.0.0.0:8887]
+Oct 29, 2021 11:44:08 AM org.glassfish.grizzly.http.server.HttpServer start
+INFO: [HttpServer] Started.
+Try http://localhost:8887/graphwalker/hasNext or http://localhost:8887/graphwalker/getNext
+Press Control+C to end...
+11:44:08.758 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received restart
+11:44:08.841 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:08.877 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:08.878 [Grizzly(5)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:08.885 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Start' in model: 'scs'
+11:44:08.915 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:08.950 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received setData with script: airplane_number="45"
+11:44:08.950 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'airplane_number="45"' in model: 'scs'
+11:44:08.957 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 2:3, runway_number: 0, pilot_number: 0, state: -1, runway_status: Free, airplane_visited: 0, '
+11:44:08.970 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:08.985 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:08.986 [Grizzly(13)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:08.990 [Grizzly(13)] INFO org.graphwalker.core.generator.SingletonRandomGenerator - Seed: 8671177671485
+11:44:08.990 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'start_operation' in model: 'scs'
+11:44:09.008 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.030 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.042 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.042 [Grizzly(3)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.043 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:09.059 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.079 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=0
+11:44:09.081 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=0' in model: 'scs'
+11:44:09.093 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 2:3, runway_number: 0, pilot_number: 0, state: 0, runway_status: Free, airplane_visited: 0, '
+11:44:09.116 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.163 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.164 [Grizzly(11)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.164 [Grizzly(11)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'getLocation' in model: 'scs'
+11:44:09.184 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.214 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received setData with script: airplane_1_location="3:3"
+11:44:09.214 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'airplane_1_location="3:3"' in model: 'scs'
+11:44:09.230 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 0, runway_status: Free, airplane_visited: 0, '
+11:44:09.266 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.284 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.284 [Grizzly(3)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.285 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:09.313 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.341 [Grizzly(8)] DEBUG org.graphwalker.restful.Restful - Received setData with script: airplane_visited=1
+11:44:09.341 [Grizzly(8)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'airplane_visited=1' in model: 'scs'
+11:44:09.345 [Grizzly(8)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 0, runway_status: Free, airplane_visited: 1, '
+11:44:09.365 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.380 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.380 [Grizzly(11)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.380 [Grizzly(11)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:09.399 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.418 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.433 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.433 [Grizzly(16)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.433 [Grizzly(16)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:09.451 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.466 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=1
+11:44:09.467 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=1' in model: 'scs'
+11:44:09.470 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 1, runway_status: Free, airplane_visited: 1, '
+11:44:09.490 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.510 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.510 [Grizzly(9)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.511 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'predictConflict' in model: 'scs'
+11:44:09.540 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.556 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.571 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.572 [Grizzly(15)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.573 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:09.593 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.607 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.625 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.626 [Grizzly(5)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.626 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:09.641 [Grizzly(8)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.662 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.681 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.682 [Grizzly(11)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.682 [Grizzly(11)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:09.696 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.714 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=2
+11:44:09.714 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=2' in model: 'scs'
+11:44:09.724 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 2, runway_status: Free, airplane_visited: 1, '
+11:44:09.742 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.755 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.756 [Grizzly(3)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.756 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'getLocation' in model: 'scs'
+11:44:09.774 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.790 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.799 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.800 [Grizzly(9)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.801 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:09.820 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.835 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.844 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.845 [Grizzly(1)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.845 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:09.861 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.873 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.886 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.887 [Grizzly(5)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.887 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:09.902 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.918 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=3
+11:44:09.919 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=3' in model: 'scs'
+11:44:09.922 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 3, runway_status: Free, airplane_visited: 1, '
+11:44:09.943 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.955 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.955 [Grizzly(14)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.955 [Grizzly(14)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'resolveConflict' in model: 'scs'
+11:44:09.973 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:09.986 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:09.997 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:09.998 [Grizzly(3)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:09.998 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Pilot' in model: 'scs'
+11:44:10.015 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.031 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.046 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.046 [Grizzly(9)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.046 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'makeConflictAmend' in model: 'scs'
+11:44:10.062 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.077 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.085 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.086 [Grizzly(1)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.086 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:10.096 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.115 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.136 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.136 [Grizzly(4)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.137 [Grizzly(4)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:10.160 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.175 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.188 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.189 [Grizzly(12)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.190 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:10.204 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.218 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=4
+11:44:10.218 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=4' in model: 'scs'
+11:44:10.221 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 4, runway_status: Free, airplane_visited: 1, '
+11:44:10.239 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.255 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.256 [Grizzly(2)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.257 [Grizzly(2)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'assignRunway' in model: 'scs'
+11:44:10.270 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.282 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_number=0
+11:44:10.283 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_number=0' in model: 'scs'
+11:44:10.286 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 4, runway_status: Free, airplane_visited: 1, '
+11:44:10.297 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.309 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.310 [Grizzly(12)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.310 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:10.323 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.349 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.360 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.361 [Grizzly(3)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.361 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:10.378 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.395 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.405 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.405 [Grizzly(6)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.405 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:10.423 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.439 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=5
+11:44:10.439 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=5' in model: 'scs'
+11:44:10.445 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 5, runway_status: Free, airplane_visited: 1, '
+11:44:10.464 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.481 [Grizzly(1)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.483 [Grizzly(1)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.483 [Grizzly(1)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'predictConflict' in model: 'scs'
+11:44:10.502 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.521 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.549 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.552 [Grizzly(4)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.553 [Grizzly(4)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:10.577 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.597 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.615 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.616 [Grizzly(12)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.616 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:10.627 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.639 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.649 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.649 [Grizzly(16)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.650 [Grizzly(16)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:10.663 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.674 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=6
+11:44:10.674 [Grizzly(4)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=6' in model: 'scs'
+11:44:10.684 [Grizzly(4)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 6, runway_status: Free, airplane_visited: 1, '
+11:44:10.696 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.707 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.707 [Grizzly(9)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.707 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'runwayAssignment' in model: 'scs'
+11:44:10.719 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.738 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_number="3"
+11:44:10.738 [Grizzly(14)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_number="3"' in model: 'scs'
+11:44:10.748 [Grizzly(14)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 3, pilot_number: 0, state: 6, runway_status: Free, airplane_visited: 1, '
+11:44:10.757 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_status="Busy"
+11:44:10.757 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_status="Busy"' in model: 'scs'
+11:44:10.759 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 3, pilot_number: 0, state: 6, runway_status: Busy, airplane_visited: 1, '
+11:44:10.768 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.776 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.776 [Grizzly(5)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.777 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Runway' in model: 'scs'
+11:44:10.786 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.801 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.811 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.812 [Grizzly(9)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.812 [Grizzly(9)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromRunway' in model: 'scs'
+11:44:10.825 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.841 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.853 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.854 [Grizzly(15)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.854 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:10.865 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.879 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=7
+11:44:10.879 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=7' in model: 'scs'
+11:44:10.882 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 3, pilot_number: 0, state: 7, runway_status: Busy, airplane_visited: 1, '
+11:44:10.893 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.907 [Grizzly(8)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.908 [Grizzly(8)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.908 [Grizzly(8)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'runwayAssignment' in model: 'scs'
+11:44:10.920 [Grizzly(9)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:10.938 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_number="34"
+11:44:10.939 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_number="34"' in model: 'scs'
+11:44:10.944 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 34, pilot_number: 0, state: 7, runway_status: Busy, airplane_visited: 1, '
+11:44:10.959 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:10.972 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:10.972 [Grizzly(3)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:10.973 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Runway' in model: 'scs'
+11:44:10.986 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.000 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.011 [Grizzly(8)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.012 [Grizzly(8)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.012 [Grizzly(8)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromRunway' in model: 'scs'
+11:44:11.033 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.045 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.056 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.057 [Grizzly(11)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.057 [Grizzly(11)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:11.070 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.084 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=8
+11:44:11.085 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=8' in model: 'scs'
+11:44:11.089 [Grizzly(3)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 34, pilot_number: 0, state: 8, runway_status: Busy, airplane_visited: 1, '
+11:44:11.106 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.118 [Grizzly(5)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.119 [Grizzly(5)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.119 [Grizzly(5)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'assignRunway' in model: 'scs'
+11:44:11.137 [Grizzly(8)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.152 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_number=0
+11:44:11.152 [Grizzly(7)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_number=0' in model: 'scs'
+11:44:11.155 [Grizzly(7)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 8, runway_status: Busy, airplane_visited: 1, '
+11:44:11.166 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_status="Free"
+11:44:11.166 [Grizzly(10)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_status="Free"' in model: 'scs'
+11:44:11.173 [Grizzly(10)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 8, runway_status: Free, airplane_visited: 1, '
+11:44:11.184 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.196 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.196 [Grizzly(13)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.196 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:11.208 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.221 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.232 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.232 [Grizzly(2)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.233 [Grizzly(2)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:11.247 [Grizzly(8)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.263 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.272 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.273 [Grizzly(10)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.273 [Grizzly(10)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:11.290 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.302 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=9
+11:44:11.302 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=9' in model: 'scs'
+11:44:11.305 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 9, runway_status: Free, airplane_visited: 1, '
+11:44:11.312 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.324 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.325 [Grizzly(15)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.325 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'predictConflict' in model: 'scs'
+11:44:11.344 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.359 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.372 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.373 [Grizzly(7)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.373 [Grizzly(7)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:11.386 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.398 [Grizzly(11)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.408 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.408 [Grizzly(13)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.408 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromAir' in model: 'scs'
+11:44:11.422 [Grizzly(3)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.434 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.444 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.444 [Grizzly(2)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.444 [Grizzly(2)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:11.455 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.476 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=10
+11:44:11.476 [Grizzly(7)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=10' in model: 'scs'
+11:44:11.479 [Grizzly(7)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 0, pilot_number: 0, state: 10, runway_status: Free, airplane_visited: 1, '
+11:44:11.490 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.501 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.501 [Grizzly(12)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.502 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'runwayAssignment' in model: 'scs'
+11:44:11.514 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.528 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_number="11"
+11:44:11.528 [Grizzly(16)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_number="11"' in model: 'scs'
+11:44:11.533 [Grizzly(16)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 11, pilot_number: 0, state: 10, runway_status: Free, airplane_visited: 1, '
+11:44:11.547 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received setData with script: runway_status="Busy"
+11:44:11.548 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'runway_status="Busy"' in model: 'scs'
+11:44:11.551 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 11, pilot_number: 0, state: 10, runway_status: Busy, airplane_visited: 1, '
+11:44:11.559 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.568 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.569 [Grizzly(6)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.569 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Runway' in model: 'scs'
+11:44:11.580 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.593 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.602 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.603 [Grizzly(12)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.603 [Grizzly(12)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'returnATCfromRunway' in model: 'scs'
+11:44:11.614 [Grizzly(14)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.628 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.638 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.639 [Grizzly(15)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.640 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'ATC' in model: 'scs'
+11:44:11.651 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.664 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received setData with script: state=11
+11:44:11.665 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'state=11' in model: 'scs'
+11:44:11.667 [Grizzly(6)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 11, pilot_number: 0, state: 11, runway_status: Busy, airplane_visited: 1, '
+11:44:11.678 [Grizzly(7)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.693 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.693 [Grizzly(10)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.694 [Grizzly(10)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'getPilot' in model: 'scs'
+11:44:11.704 [Grizzly(12)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.719 [Grizzly(13)] DEBUG org.graphwalker.restful.Restful - Received setData with script: pilot_number="45"
+11:44:11.720 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute action: 'pilot_number="45"' in model: 'scs'
+11:44:11.727 [Grizzly(13)] DEBUG org.graphwalker.core.machine.ExecutionContext - Data: 'JsonContext: org.graphwalker.io.factory.json.JsonContext@7726e185, airplane_number: 45, airplane_1_location: 3:3, runway_number: 11, pilot_number: 45, state: 11, runway_status: Busy, airplane_visited: 1, '
+11:44:11.745 [Grizzly(16)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.758 [Grizzly(15)] DEBUG org.graphwalker.restful.Restful - Received getNext
+11:44:11.758 [Grizzly(15)] DEBUG org.graphwalker.core.machine.SimpleMachine - Context: org.graphwalker.io.factory.json.JsonContext@7726e185
+11:44:11.759 [Grizzly(15)] DEBUG org.graphwalker.core.machine.ExecutionContext - Execute method: 'Airplane' in model: 'scs'
+11:44:11.770 [Grizzly(2)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.785 [Grizzly(6)] DEBUG org.graphwalker.restful.Restful - Received hasNext
+11:44:11.798 [Grizzly(4)] DEBUG org.graphwalker.restful.Restful - Received getData
+11:44:11.813 [Grizzly(10)] DEBUG org.graphwalker.restful.Restful - Received getStatistics
+/usr/local/bin/gw: line 2: 45037 Killed                  java -jar ~/graphwalker/graphwalker-cli-4.3.1.jar "$@"
